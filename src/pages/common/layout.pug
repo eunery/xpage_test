@@ -1,0 +1,23 @@
+doctype html
+html(lang="ru")
+    block head
+        head
+            meta(charset="utf-8")
+            title Xpage news
+            meta(content="width=device-width, initial-scale=1" name="viewport")
+            meta(content="ie=edge" http-equiv="x-ua-compatible")
+            link(rel="stylesheet" href="/css/main.css")
+            link(rel="stylesheet" href="/fonts/stylesheet.css")
+            link(rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css")
+            link(rel="stylesheet" href="/js/nice-select2.css")
+
+    body
+        block header
+            include header
+        block content
+        block footer
+            include footer
+
+        script(src="https://unpkg.com/js-datepicker")
+        script(src="./js/main.js")
+        script(src="./js/nice-select2.js")

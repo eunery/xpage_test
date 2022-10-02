@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Frank';
+    src: url('Frank-Bold.woff2') format('woff2'),
+        url('Frank-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Frank';
+    src: url('Frank-Light.woff2') format('woff2'),
+        url('Frank-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Frank';
+    src: url('Frank-Medium.woff2') format('woff2'),
+        url('Frank-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Frank';
+    src: url('Frank-Regular.woff2') format('woff2'),
+        url('Frank-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
