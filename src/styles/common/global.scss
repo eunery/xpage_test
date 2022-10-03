@@ -1,3 +1,5 @@
+@import "vars";
+
 body{
   font-family: Frank;
   background: #F2F2F2;
@@ -6,7 +8,7 @@ body{
 .container{
   max-width: 1504px;
   margin: 0px auto;
-  @media screen and (max-width: 1440px){
+  @media screen and (max-width: $notebookL){
     max-width: 1370px;
   }
   @media screen and (max-width: 1380px){
@@ -15,7 +17,7 @@ body{
   @media screen and (max-width: 1210px){
     max-width: 1000px;
   }
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     max-width: 900px;
   }
   @media screen and (max-width: 920px){
@@ -24,7 +26,7 @@ body{
   @media screen and (max-width: 800px){
     max-width: 765px;
   }
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: $tablet){
     max-width:675px;
   }
   @media screen and (max-width: 680px){
@@ -36,7 +38,7 @@ body{
   @media screen and (max-width: 510px){
     max-width: 360px;
   }
-  @media screen and (max-width: 360px){
+  @media screen and (max-width: $mobileSm){
     max-width: 340px
   }
 
@@ -44,7 +46,7 @@ body{
 
 .divider{
   border: 2px solid #373334;
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     border: 1px solid #373334;
   }
 }

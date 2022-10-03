@@ -1,7 +1,9 @@
+@import "vars";
+
 .second-container{
   max-width: 985px;
   margin: unset;
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     max-width: unset;
   }
 }
@@ -15,12 +17,12 @@
       line-height: 62px;
       font-weight: bold;
       color: #373334;
-      @media screen and (max-width: 1440px){
-        font-size: 40px;
+      @media screen and (max-width: $notebookL){
+        font-size: 32px;
         line-height: 50px;
       }
-      @media screen and (max-width: 1024px){
-        font-size: 30px;
+      @media screen and (max-width: $notebook){
+        font-size: 26px;
         line-height: 35px;
         padding-top: 30px;
       }
@@ -33,19 +35,36 @@
     .container.second-container{
       .header-small{
         padding-top: 23px;
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: $notebook){
           padding-top: 5px;
+        }
+        display: flex;
+        &>:not(:last-child){
+          &:after{
+            position: absolute;
+            content: "/";
+            top: 0px;
+            right: -8px;
+          }
+        }
+        &>:not(:first-child){
+          margin-left: 10px;
+        }
+        a{
+          position: relative;
+          text-decoration: none;
         }
       }
       .tag-date{
         display: flex;
         padding-top: 77px;
-        @media screen and (max-width: 1024px){
+        margin-bottom: 10px;
+        @media screen and (max-width: $notebook){
           padding-top: 30px;
         }
         &>:not(:first-child){
           margin-left: 40px;
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             margin-left: 20px;
           }
         }
@@ -54,25 +73,48 @@
         .date{
         }
       }
-      .divider-info.divider{
-        margin-top: 10px;
-      }
-      .header-main{
-        padding-top: 38px;
-        @media screen and (max-width: 1024px){
-          padding-top: 10px;
+      hr{
+        border: 2px solid #373334;
+        @media screen and (max-width: $notebook){
+          border: 1px solid #373334;
         }
       }
-      .header-second{
+      h1{
+        padding-top: 38px;
+        @media screen and (max-width: $notebook){
+          padding-top: 10px;
+        }
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 27px;
+        color: #373334;
+        @media screen and (max-width: 1210px){
+          font-size: 17px;
+          line-height: 20px;
+        }
+        @media screen and (max-width: $notebook){
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      h2{
         padding-top: 25px;
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: $notebook){
           padding-top: 20px;
+        }
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 26px;
+        color: #373334;
+        @media screen and (max-width: $notebook){
+          font-size: 12px;
+          line-height: 18px;
         }
       }
       .video{
         margin-top: 52px;
         position: relative;
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: $notebook){
           margin-top: 30px;
         }
         &:before{
@@ -88,11 +130,11 @@
           opacity: 0.65;
           border-radius: 50%;
           margin: auto;
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             width: 100px;
             height: 100px;
           }
-          @media screen and (max-width: 768px){
+          @media screen and (max-width: $tablet){
             width: 80px;
             height: 80px;
           }
@@ -121,7 +163,7 @@
         .video-img{
           width: 985px;
           height: 555.47px;
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             width: 900px;
             height: auto;
           }
@@ -131,7 +173,7 @@
           @media screen and (max-width: 800px){
             width: 765px;
           }
-          @media screen and (max-width: 768px){
+          @media screen and (max-width: $tablet){
             width:675px;
           }
           @media screen and (max-width: 680px){
@@ -143,51 +185,63 @@
           @media screen and (max-width: 510px){
             width: 360px;
           }
-          @media screen and (max-width: 360px){
+          @media screen and (max-width: $mobileSm){
             width: 340px;
           }
         }
       }
-      .interview{
+      blockquote{
+        font-size: 20px;
+        line-height: 27px;
+        color: #373334;
         padding-top: 44px;
         @media screen and (max-width: 1024px){
           padding-top: 20px;
         }
-        .name{
-          font-size: 20px;
-          line-height: 27px;
-          color: #373334;
-          @media screen and (max-width: 1024px){
-            font-size: 14px;
-            line-height: 20px;
-          }
-        }
-        .position{
-          font-size: 14px;
-          line-height: 19px;
-          color: #959595;
-          @media screen and (max-width: 1024px){
-            font-size: 12px;
-            line-height: 18px;
-          }
-        }
-        .interview_text{
-          padding-top: 27px;
-          @media screen and (max-width: 1024px){
-            padding-top: 12px;
-          }
-        }
-      }
-      .divider-interview.divider{
-        margin-top: 47px;
         @media screen and (max-width: 1024px){
-          margin-top: 20px;
+          font-size: 14px;
+          line-height: 20px;
         }
       }
-      .diff_text{
+      b{
+        font-size: 14px;
+        line-height: 19px;
+        color: #959595;
+        @media screen and (max-width: 1024px){
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+      h3{
+        padding-top: 27px;
+        @media screen and (max-width: 1024px){
+          padding-top: 12px;
+        }
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 26px;
+        color: #373334;
+        @media screen and (max-width: 1024px){
+          font-size: 12px;
+          line-height: 18px;
+        }
+        margin-bottom: 47px;
+        @media screen and (max-width: 1024px){
+          margin-bottom: 20px;
+        }
+      }
+      p{
         margin-top: 40px;
         @media screen and (max-width: 1024px){
           margin-top: 20px;
+        }
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 26px;
+        color: #373334;
+        @media screen and (max-width: 1024px){
+          font-size: 12px;
+          line-height: 18px;
         }
       }
       .titer{
@@ -204,7 +258,7 @@
             padding-left: 10px;
           }
         }
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: $notebook){
           margin-top: 35px;
         }
         .author{
@@ -238,7 +292,7 @@
           .post_fat-text{
             font-weight: 300;
             font-size: 16px;
-            @media screen and (max-width: 1024px){
+            @media screen and (max-width: $notebook){
               font-size: 13px;
             }
             @media screen and (max-width: 680px){
@@ -283,7 +337,7 @@
               height: 13px;
               }
             }
-            @media screen and (max-width: 1024px){
+            @media screen and (max-width: $notebook){
               margin-top: 10px;
             }
 
@@ -297,25 +351,25 @@
     height: 569px;
     margin-top: 134px;
     color: #fff;
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: $notebook){
       margin-top: 70px;
       height: 460px;
     }
     .container{
       .container.second-container{
         max-width: 985px;
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: $notebook){
           max-width: unset;
         }
         .commentary_block-header{
           padding-top: 89px;
           font-size: 52px;
           line-height: 65px;
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             font-size: 32px;
             padding-top: 50px;
           }
-          @media screen and (max-width: 768px){
+          @media screen and (max-width: $tablet){
             font-size: 26px;
             line-height: 40px;
           }
@@ -325,7 +379,7 @@
           display: grid;
           grid-template-columns: repeat(5,1fr);
           grid-gap: 40px 50px;
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             grid-gap: 40px 10px;
           }
           .name{
@@ -357,7 +411,7 @@
           .file_block{
             display: flex;
             .file_text{
-              @media screen and (max-width: 1024px){
+              @media screen and (max-width: $notebook){
                 font-size: 12px;
                 line-height: 18px;
               }
@@ -401,7 +455,7 @@
           font-size: 16px;
           line-height: 16px;
           padding: 15px 40px 15px 40px;
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             font-size: 12px;
             line-height: 12px;
           }
@@ -417,7 +471,7 @@
     font-size: 16px;
     line-height: 22px;
     color: #fff;
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: $notebook){
       font-size: 12px;
       line-height: 18px;
     }

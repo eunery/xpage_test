@@ -1,3 +1,5 @@
+
+
 const picker = datepicker(document.querySelector('.date_date-picker'), {
     formatter: (input, date, instance) => {
         let day= date.getDate();
@@ -20,6 +22,7 @@ function menu(){
     bar.style.position = bar.style.position === 'absolute' ? 'unset' : 'absolute';
 }
 
+NiceSelect.bind(document.querySelector(".select"), {searchable: false});
 
 
 

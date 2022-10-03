@@ -1,16 +1,34 @@
+@import "vars";
+
 .main {
   font-family: Frank;
 
   .container {
     .headline {
       padding-top: 47px;
-      @media screen and (max-width: 1024px){
+      @media screen and (max-width: $notebook){
         padding-top: 25px;
       }
       .headline_page-text {
       }
     }
     .rubric {
+      display: flex;
+      &>:not(:last-child){
+        &:after{
+          position: absolute;
+          content: "/";
+          top: 0px;
+          right: -8px;
+        }
+      }
+      &>:not(:first-child){
+        margin-left: 10px;
+      }
+      a{
+        position: relative;
+        text-decoration: none;
+      }
       .rubric__text {
         padding-top: 4px;
       }
@@ -25,7 +43,7 @@
           width: 389px;
           height: 56px;
           background: transparent;
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             width: 150px;
             height: 35px;
           }
@@ -39,10 +57,10 @@
           top: 20px;
           left: 24px;
           content: url("../../img/content/calendar.svg");
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             top: 10px;
           }
-          @media screen and (max-width: 768px){
+          @media screen and (max-width: $tablet){
             left: 10px;
           }
         }
@@ -51,16 +69,16 @@
           top: 20px;
           right: 24px;
           content: url("../../img/header/menu.svg");
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             top: 10px;
           }
-          @media screen and (max-width: 768px){
+          @media screen and (max-width: $tablet){
             right: 10px;
           }
         }
         input{
           padding-left: 74px;
-          @media screen and (max-width: 768px){
+          @media screen and (max-width: $tablet){
             padding-left: 40px;
           }
         }
@@ -120,20 +138,8 @@
       .topic {
         padding-left: 50px;
         position: relative;
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: $tablet){
           padding-left: 30px;
-        }
-        &:after{
-          position: absolute;
-          top: 20px;
-          right: 24px;
-          content: ç;
-          @media screen and (max-width: 1024px){
-            top: 10px;
-          }
-          @media screen and (max-width: 768px){
-            right: 10px;
-          }
         }
         .select {
           width: 468px;
@@ -143,13 +149,31 @@
           -webkit-appearance: none;
           -moz-appearance: none;
           -ms-appearance: none;
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             width: 230px;
             height: 41px;
           }
           @media screen and (max-width: 610px){
             width: 150px;
             height: 41px;
+          }
+        }
+        .nice-select{
+          border: 2px solid #373334;
+          border-radius: 0px;
+          background: transparent;
+          .list{
+            overflow: scroll;
+          }
+          .nice-select-dropdown{
+            border: 1px solid #373334;
+            border-radius: 0px;
+            .list{
+              border-radius: 0px;
+              &>:first-child{
+                display: none;
+              }
+            }
           }
         }
       }
@@ -165,7 +189,7 @@
         grid-gap: 86px 20px;
         grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
       }
-      @media screen and (max-width: 1024px){
+      @media screen and (max-width: $notebook){
         grid-gap: 55px 35px;
         margin-top: 40px;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -173,7 +197,7 @@
       @media screen and (max-width: 920px){
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       }
-      @media screen and (max-width: 768px){
+      @media screen and (max-width: $tablet){
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -186,7 +210,7 @@
         display: flex;
         flex-flow: column;
         align-items: flex-start;
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: $tablet){
           max-width: 300px;
         }
         @media screen and (max-width: 680px){
@@ -198,7 +222,7 @@
         @media screen and (max-width: 510px){
           max-width: 360px;
         }
-        @media screen and (max-width: 360px){
+        @media screen and (max-width: $mobileSm){
           max-width: 340px;
         }
         .post_img {
@@ -206,7 +230,7 @@
             width: 100%;
             height: 100%;
 
-            @media screen and (max-width: 768px){
+            @media screen and (max-width: $tablet){
               width: 300px;
               height: auto;
             }
@@ -219,14 +243,14 @@
             @media screen and (max-width: 510px){
               width: 360px;
             }
-            @media screen and (max-width: 360px){
+            @media screen and (max-width: $mobileSm){
               width: 340px;
             }
           }
         }
         .post_info {
           padding-top: 32px;
-          @media screen and (max-width: 1024px){
+          @media screen and (max-width: $notebook){
             padding-top: 15px;
           }
           .tag-date {
@@ -247,7 +271,7 @@
             margin-top: auto;
             background: url("../../img/content/arrowUP.svg") no-repeat;
             background-size: contain;
-            @media screen and (max-width: 1024px) {
+            @media screen and (max-width: $notebook) {
               width: 20px;
               height: 18px;
             }
@@ -267,11 +291,11 @@
             max-width: 100%;
             padding: 28px;
           }
-          @media screen and (max-width: 1024px) {
+          @media screen and (max-width: $notebook) {
             max-width: 100%;
             padding: 28px;
           }
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: $tablet) {
             max-width: 100%;
             padding: 16px;
           }
@@ -283,7 +307,7 @@
           }
           .post_img {
             img{
-              @media screen and (max-width: 1024px){
+              @media screen and (max-width: $notebook){
                 width: 360px;
                 height: auto;
               }
@@ -304,10 +328,10 @@
             @media screen and (max-width: 1210px){
               max-width: 400px;
             }
-            @media screen and (max-width: 1024px){
+            @media screen and (max-width: $notebook){
               max-width: 400px;
             }
-            @media screen and (max-width: 768px){
+            @media screen and (max-width: $tablet){
               max-width: 290px;
             }
             @media screen and (max-width: 680px){
@@ -328,7 +352,7 @@
             .post_text {
               padding-top: 20px;
               margin-bottom: unset;
-              @media screen and (max-width: 1024px){
+              @media screen and (max-width: $notebook){
                 display: flex;
                 flex-flow: column;
               }
@@ -340,7 +364,7 @@
           .post_link {
             margin-left: auto;
             padding-bottom: 20px;
-            @media screen and (max-width: 1024px) {
+            @media screen and (max-width: $notebook) {
               width: 10px;
               height: 10px;
               padding-bottom: 10px;
@@ -363,9 +387,13 @@
       align-items: center;
       margin: 70px auto;
       position: relative;
-      @media screen and (max-width: 1024px){
+      @media screen and (max-width: $notebook){
         max-width: 180px;
         margin: 40px auto;
+      }
+      a{
+        text-decoration: none;
+        color: #373334;
       }
       .current {
         text-decoration: underline;
@@ -379,7 +407,7 @@
         content: "";
         width: 14px;
         height: 14px;
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: $notebook){
           background-size: 8px;
           top: 5px;
           left: -30px;
@@ -393,7 +421,7 @@
         content: "";
         width: 14px;
         height: 14px;
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: $notebook){
           background-size: 8px;
           top: 5px;
           right: -30px;
@@ -413,7 +441,7 @@
     font-size: 17px;
     line-height: 20px;
   }
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     font-size: 14px;
     line-height: 20px;
   }
@@ -424,7 +452,7 @@
   font-size: 16px;
   line-height: 26px;
   color: #373334;
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     font-size: 12px;
     line-height: 18px;
   }
@@ -435,7 +463,7 @@
   font-size: 16px;
   line-height: 22px;
   color: #9F0023;
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     font-size: 12px;
     line-height: 14px;
   }
@@ -446,7 +474,7 @@
   font-size: 12px;
   line-height: 14px;
   color: #959595;
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     font-size: 10px;
     line-height: 14px;
   }
@@ -457,7 +485,7 @@
   font-size: 20px;
   line-height: 27px;
   color: #373334;
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     font-size: 12px;
     line-height: 16px;
   }
@@ -468,7 +496,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     font-size: 12px;
     line-height: 14px;
   }
@@ -482,7 +510,7 @@
   font-family: Frank;
   background: transparent;
   border: 2px solid #373334;
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: $notebook){
     font-size: 12px;
     line-height: 14px;
   }
@@ -492,8 +520,8 @@
   font-weight: 700;
   font-size: 70px;
   line-height: 88px;
-  @media screen and (max-width: 1024px){
-    font-size: 52px;
+  @media screen and (max-width: $notebook){
+    font-size: 46px;
     line-height: 60px;
   }
 }

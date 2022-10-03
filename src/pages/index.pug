@@ -20,7 +20,8 @@ block content
             div.headline
                 h1.headline_page-text Все новости
             div.rubric
-                h2.rubric_small-text Главная / Новости
+                a(href="/").rubric_small-text Главная
+                a(href="/").rubric_small-text Новости
             div.filters
                 div.date
                     input.date_date-picker.input_style
@@ -59,12 +60,12 @@ block content
                     div.post_link
 
             div.pagination.pagination_text
-                a.current 1
-                a 2
-                a 3
-                a 4
-                a ...
-                a 123
+                a.current(href="/") 1
+                a(href="/") 2
+                a(href="/") 3
+                a(href="/") 4
+                a(href="/") ...
+                a(href="/") 123
 
 
 
